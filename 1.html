@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+     <div id="box">
+        <lee></lee>
+     </div>
+     <template id="lee">
+        <div>
+            <button @click="no1">下一个</button>
+            <button @click="no2">上一个</button>
+            <div>
+                <transition :name="t_type" v-for="(i,$index) in arr">
+                    <div>
+                        <img src="width:800px;position:absolute;left:0;top:0" alt="">
+                    </div>
+                </transition>
+            </div>
+        </div>
+     </template>
+</body>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <script>
+        Vue.component('lee',{
+            template:'#lee',
+            methods:{
+
+            },
+            data(){
+               return{
+                type:0,
+                t_type:'lee',
+                arr:[
+                    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567609507919&di=6696a0d665669e47d574f89e24120d2a&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3D4f1b719378ec54e741b9121a8c08b766%2F42166d224f4a20a42807c06a93529822720ed006.jpg',
+                    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567609588488&di=e183455930805343569409a92f43a206&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F6609c93d70cf3bc7de23879dd100baa1cd112a9b.jpg',
+                    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567609669847&di=fa22d037f9ef68ebddf9b4fbd7481381&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F8ee9a5dc6fc915edcf46dd82876f121ca8b369e0de30-nUis3S_fw658'
+                ]
+               }
+            }
+        })
+        new Vue({
+            el:'#box'
+        })
+    </script>
+</html>
